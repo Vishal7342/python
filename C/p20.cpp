@@ -1,10 +1,9 @@
 // WAP to overload print() function to display value of integer, flaot and string.
 
-#include <iostream>
+#include <iostream.h>
 #include <conio.h>
 #include <string.h>
 
-using namespace std;
 // Function prototypes
 void print(int num);
 void print(float num);
@@ -26,7 +25,7 @@ void print(char* str) {
 }
 
 int main() {
-    // Clear the screen
+    clrscr(); // Clear the screen
 
     int intValue = 10;
     float floatValue = 3.14;
@@ -37,6 +36,6 @@ int main() {
     print(floatValue);
     print(stringValue);
 
-    // Wait for a key press
+    getch(); // Wait for a key press
     return 0;
 }

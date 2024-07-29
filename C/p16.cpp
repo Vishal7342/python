@@ -1,18 +1,17 @@
 // Write a program to enter any two numbers and get addition using Inline function.
 
-#include <iostream>
+#include <iostream.h>
 #include <conio.h>  // for getch()
 
-using namespace std;
 // Inline function to perform addition
 inline int addNumbers(int a, int b)
 {
     return a + b;
 }
 
-int main()
+void main()
 {
-     // Clear the screen
+    clrscr();  // Clear the screen
 
     int num1, num2, result;
 
@@ -31,7 +30,5 @@ int main()
 
     // Wait for user to press a key before exiting
     cout << "\nPress any key to exit...";
-    // Wait for a key press
-
-    return 0;
+    getch();  // Wait for a key press
 }

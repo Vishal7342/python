@@ -1,18 +1,17 @@
 // Write a program to enter the value of height, width and find out area of rectangle using Inline function.
 
-#include <iostream>
+#include <iostream.h>
 #include <conio.h>  // for getch()
 
-using namespace std;
 // Inline function to calculate area of a rectangle
 inline int calculateArea(int height, int width)
 {
     return height * width;
 }
 
-int main()
+void main()
 {
-    // Clear the screen
+    clrscr();  // Clear the screen
 
     int height, width, area;
 
@@ -31,7 +30,5 @@ int main()
 
     // Wait for user to press a key before exiting
     cout << "\nPress any key to exit...";
-    // Wait for a key press
-
-    return 0;
+    getch();  // Wait for a key press
 }
