@@ -1,6 +1,6 @@
 {
     "files.associations": {
-        "D2.C": "cpp",
-        "D3.C": "cpp"
+        "D2.C": "c",
+        "D3.C": "c"
     }
 }
