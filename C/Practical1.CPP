@@ -1,4 +1,4 @@
-// WAP to print “Hello World”.
+// Write a C++ program to display. Hello World: output string
 
 #include <iostream.h> // Include the standard input/output stream library
 #include <conio.h> // Include the console input/output library
