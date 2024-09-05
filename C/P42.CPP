@@ -50,3 +50,10 @@ void main() {
     cout << "\nPress any key to exit...";
     getch(); // Wait for a key press
 }
+/*
+Output:-
+
+Enter your age: 18
+You are eligible to get a driving license.
+
+Press any key to exit...
