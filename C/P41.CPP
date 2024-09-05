@@ -92,3 +92,16 @@ int main() {
     getch(); // Wait for a key press before exiting
     return 0;
 }
+
+/* Output :- 
+
+Book Details and Total Bill:
+Book Number: 101
+Title: Strenjer Sring
+Author: Steem barlin
+Price: 199.9
+Quantity: 2
+Total Bill: 399.8
+
+Press any key to exit...
+*/
