@@ -69,3 +69,16 @@ int main() {
     getch(); // Wait for a key press before exiting
     return 0;
 }
+
+/* Output :-
+
+Employee Details and Salary:
+Employee Number : 101
+Employee Name : kuriya Vishal
+Dearness Allowance : 10
+House Rent Allowance :15
+Basic Salary : 40000
+Income Tex :5
+Total Salary : 48000
+
+Press any key to exit...
