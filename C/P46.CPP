@@ -51,3 +51,11 @@ int main() {
     getch(); // Wait for a key press before exiting
     return 0;
 }
+/*
+Original Counter value: 10
+After prefix increment Counter value: 11
+After postfix increment Counter value: 12
+Returned value from postfix increment Counter value: 11
+
+Press any key to exit...
+*/
