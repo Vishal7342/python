@@ -1,26 +1,31 @@
-/* Write a Program which demonstrates Binary + operator overloading. */
-
-#include <iostream.h>
-#include <string.h>
+#include <iostream>
+#include <string>
 #include <conio.h>
+#include <cstring> // Add this line
+using namespace std;
 
 class MyString {
 private:
     char* str;
+    bool ownString; // Flag to track ownership of the string
 public:
     // Constructor
     MyString(const char* s = "") {
         str = new char[strlen(s) + 1];
         strcpy(str, s);
+        ownString = true; // Set ownership to true
     }
     // Copy constructor
     MyString(const MyString& other) {
         str = new char[strlen(other.str) + 1];
         strcpy(str, other.str);
+        ownString = true; // Set ownership to true
     }
     // Destructor
     ~MyString() {
-        delete[] str;
+        if (ownString) {
+            delete[] str;
+        }
     }
     // Overload binary + operator for string concatenation
     MyString operator+(const MyString& other) const {
@@ -28,17 +33,22 @@ public:
         strcpy(newStr, str);
         strcat(newStr, other.str);
         MyString temp(newStr);
-        delete[] newStr;
+        temp.ownString = true; // Set ownership to true
         return temp;
     }
     // Method to display the string
     void display() const {
         cout << str << endl;
     }
+    // Constructor to initialize with a dynamically allocated string
+    MyString(char* s) {
+        str = s;
+        ownString = false; // Set ownership to false
+    }
 };
+
 // Main function
 int main() {
-    clrscr(); // Clear the screen
     // Create two MyString objects
     MyString s1("Hello.. ");
     MyString s2("World!!");
@@ -55,3 +65,12 @@ int main() {
     getch(); // Wait for a key press before exiting
     return 0;
 }
+/*
+Output :-
+
+String 1: Hello.. 
+String 2: World!!
+Concatenated string: Hello.. World!!
+
+Press any key to exit...
+*/
