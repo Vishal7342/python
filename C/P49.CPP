@@ -42,3 +42,12 @@ int main()
     getch(); // Wait for user to press a key before exiting
     return 0;
 }
+/*
+Enter coordinates for p1 (x y): 5
+6
+Enter coordinates for p2 (x y): 2
+4
+p1 is not less than p2.
+
+Press any key to exit...
+*/
