@@ -43,3 +43,16 @@ int main() {
     getch(); // Wait for a key press before exiting
     return 0;
 }
+/*
+Enter coordinates for Latitude:
+Enter x and y: 2
+3
+Enter coordinates for Longitude:
+Enter x and y: 34
+45
+Latitude: (2, 3)
+Longitude: (34, 45)
+Point 1 - Point 2: (-32, -42)
+
+Press any key to exit...
+*/
