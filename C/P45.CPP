@@ -40,3 +40,8 @@ int main() {
     getch(); // Wait for a key press before exiting
     return 0;
 }
+/*
+Output:-
+Original vector: Vector(1, -2, 3)
+Negated vector: Vector(-1, 2, -3)
+*/
