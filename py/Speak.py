@@ -10,4 +10,4 @@ def speak(text):
     engine.say(text)
     engine.runAndWait()
     
-# speak("hi sir how are you?")
+speak( input ("Enter your message: \n") )
