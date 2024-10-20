@@ -1,0 +1,234 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+struct node
+{
+	int data;
+	struct node *next;
+};
+void create();
+void traverse();
+void insert_first();
+void insert_last();
+void insert_middle();
+void delete_first();
+void delete_last();
+void delete_middle();
+void copying();
+void merging();
+void searching();
+struct node *head=NULL,*newnode,*head1=NULL,*temp,*loc,*temp1;
+int value,ch,i,pos=0,flag=0,key;
+void main()
+{
+	clrscr();
+	while(1)
+	{
+		printf("\nOperations are:");
+		printf("\n1.Create");
+		printf("\n2.Traversal");
+		printf("\n3.Insert First");
+		printf("\n4.Insert Last");
+		printf("\n5.Insert Middle");
+		printf("\n6.Delete First");
+		printf("\n7.Delete Last");
+		printf("\n8.Delete Middle");
+		printf("\n9.Copying");
+		printf("\n10.Merging");
+		printf("\n11.Searching");
+		printf("\n12.Exit");
+		printf("\nEnter your choice:");
+		scanf("%d",&ch);
+		switch(ch)
+		{
+			case 1 : create();
+				 break;
+			case 2 : traverse();
+				 break;
+			case 3 : insert_first();
+				 break;
+			case 4 : insert_last();
+				 break;
+			case 5 : insert_middle();
+				 break;
+			case 6 : delete_first();
+				 break;
+			case 7 : delete_last();
+				 break;
+			case 8 : delete_middle();
+				 break;
+			case 9 : copying();
+				 break;
+			case 10 : merging();
+				 break;
+			case 11 : searching();
+				 break;
+			case 12: exit(0);
+			default : printf("\nSorry.....wrong choice");
+				 break;
+		}
+	}
+}
+void create()
+{
+	while(ch==1)
+	{
+		if(head==NULL)
+		{
+		head=newnode=(struct node*)malloc(sizeof(struct node));
+		}
+		else
+		{
+		newnode->next=(struct node*)malloc(sizeof(struct node));
+		newnode=newnode->next;
+		}
+		printf("\nEnter the value:");
+		scanf("%d",&value);
+		newnode->data=value;
+		newnode->next=NULL;
+		printf("\nDo u want to create another node??(1/0)");
+		scanf("%d",&ch);
+	}
+}
+void traverse()
+{
+	temp=head;
+	while(temp!=NULL)
+	{
+		printf("    %d |  %u    ",temp->data,temp->next);
+		temp=temp->next;
+	}
+}
+void insert_first()
+{
+	newnode=(struct node*)malloc(sizeof(struct node));
+	printf("\nEnter the value:");
+	scanf("%d",&value);
+	newnode->data=value;
+	newnode->next=head;
+	head=newnode;
+	printf("\nDisplay is:");
+	traverse();
+}
+void insert_last()
+{
+	temp=head;
+	while(temp->next!=NULL)
+	{
+		temp=temp->next;
+	}
+	newnode=(struct node*)malloc(sizeof(struct node));
+	printf("\nEnter the value:");
+	scanf("%d",&value);
+	newnode->data=value;
+	newnode->next=NULL;
+	temp->next=newnode;
+	printf("\nDisplay is:");
+	traverse();
+}
+void insert_middle()
+{
+	temp=head;
+	printf("\nEnter your position:");
+	scanf("%d",&pos);
+	for(i=1;i<(pos-1);i++)
+	{
+		temp=temp->next;
+	}
+	newnode=(struct node*)malloc(sizeof(struct node));
+	printf("\nEnter the value:");
+	scanf("%d",&value);
+	newnode->data=value;
+	newnode->next=temp->next;
+	temp->next=newnode;
+	printf("\nDisplay is:");
+	traverse();
+}
+void delete_first()
+{
+	head=head->next;
+	printf("\nDisplay is:");
+	traverse();
+}
+void delete_last()
+{
+	temp=head;
+	while(temp->next->next!=NULL)
+	{
+		temp=temp->next;
+	}
+	temp->next=NULL;
+	printf("\nDisplay is:");
+	traverse();
+}
+void delete_middle()
+{
+	temp=head;
+	printf("\nEnter the position:");
+	scanf("%d",&pos);
+	for(i=1;i<(pos-1);i++)
+	{
+		temp=temp->next;
+	}
+	temp->next=temp->next->next;
+	printf("\nDisplay is:");
+	traverse();
+}
+void copying()
+{
+	temp=head;
+	while(temp!=NULL)
+	{
+		if(head1==NULL)
+		{
+		head1=newnode=(struct node*)malloc(sizeof(struct node));
+		}
+		else
+		{
+		newnode->next=(struct node*)malloc(sizeof(struct node));
+		newnode=newnode->next;
+		}
+		newnode->data=temp->data;
+		newnode->next=NULL;
+		temp=temp->next;
+	}
+}
+void merging()
+{
+	temp=head;
+	while(temp->next!=NULL)
+	{
+		temp=temp->next;
+	}
+	temp->next=head1;
+	printf("\nDisplay is:");
+	traverse();
+}
+void searching()
+{
+	temp=head;
+	printf("\nEnter Key element:");
+	scanf("%d",&key);
+	while(temp!=NULL && flag==0)
+	{
+		if(key==temp->data)
+		{
+			loc=temp;
+			flag=1;
+		}
+		else
+		{
+			temp=temp->next;
+		}
+		pos++;
+	}
+	if(flag==1)
+	{
+	  printf("\nKey is found at:%d position and %u location",pos,loc);
+	}
+	else
+	{
+	    printf("\nKey not found");
+	}
+}
+

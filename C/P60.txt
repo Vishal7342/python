@@ -1,0 +1,3 @@
+Hello.. World!!.. 
+you can received this message from throw file... 
+file name is "P60.txt"
