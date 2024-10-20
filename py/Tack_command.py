@@ -1,6 +1,8 @@
 import speech_recognition as sr
 import pyttsx3
 import os
+import datetime
+from Speak import speak
 
 # Initialize the recognizer and TTS engine
 
@@ -28,8 +30,23 @@ def take_command():
     return query
 
 while(1):
-    take_command()    
-    exit(0)
+    take_command()
+    def greet():
+        # """Greet the user based on the time of day."""
+        hour = datetime.datetime.now().hour
+        if 0 <= hour < 12:
+            speak("Good morning!")
+        elif 12 <= hour < 18:
+            speak("Good afternoon!")
+        elif 18 <= hour < 24:
+            speak("ok")
+        else:
+            speak("Good evening!")
+        speak("I am JARVIS. How can I assist you today?")
+        
+    greet()
+    
+    exit(0)   
 
 
 # def Listen():

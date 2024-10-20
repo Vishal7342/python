@@ -10,4 +10,4 @@ def speak(text):
     engine.say(text)
     engine.runAndWait()
     
-speak( input ("Enter your message: \n") )
+speak( input ("Enter your message: ") )
