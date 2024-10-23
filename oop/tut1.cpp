@@ -1,29 +1,21 @@
-#include <iostream>
+/**
+ * my
+ * *mu
+ * !my
+ * ?my
+ * todo: jhbuyf
+ * /// jbnujqd
+ * //// jnkdbajbxaz
+ * //* mythgf
+ * @param my nkuhnbvjyg
+*/
 
+#include<iostream>
+// #include "this.h" //*---->  This will produse an  error because the compiler does not know where to find the file "this.h"
 using namespace std;
-int main()
-{
-    int n;
-    cin >> n;
-    int arr[n];
-    for (int i = 0; i < n; i++)
-    {
-        cin >> arr[i];
-    }
-    int max = arr[0];
-    int min = arr[0];
-    for (int i = 0; i < n; i++)
-    {
-        if (arr[i] > max)
-        {
-            max = arr[i];
-        }
-        if (arr[i] < min)
-        {
-            min = arr[i];
-        }
-    }
-    cout << "Maximum element is " << max << endl;
-    cout << "Minimum element is " << min << endl;
+
+int  main(){
+    int a=6,b=5;
+    cout<<"THis is "<<a<<"tutorial 4"<<b<<endl;
     return 0;
 }
