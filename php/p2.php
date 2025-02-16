@@ -1,6 +1,11 @@
 <?php
-	$a = 5;
-	$b = 3;
-	$c = $a + $b;
-	echo("the sum of a or b is :".$c)
+    $num = 14597;
+    $sum = 0;
+    $rem = 0;
+    for ($i = 0; $i <= strlen($num); $i++) {
+        $rem = $num % 10;
+        $sum = $sum + $rem;
+        $num = $num / 10;
+    }
+    echo"Sum of Digits 14597 is {$sum}";
 ?>
